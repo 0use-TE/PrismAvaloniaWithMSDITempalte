@@ -12,6 +12,7 @@
     <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
     <Content Include=".template.config\template.json" />
+    <Folder Include="Services\DataPersistenceServices\" />
   </ItemGroup>
 
   <ItemGroup>

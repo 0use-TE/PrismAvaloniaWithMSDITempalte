@@ -14,7 +14,7 @@ if you have  asp.net core development experience,I think you want use msdi,becau
 2. MSDI(Microsoft DI)
 3. Semi.Avalonia
 4. MS Logging  
-5. Basic UI
+5. Basic UI with RegionManager
 ```xml
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.3.10" />

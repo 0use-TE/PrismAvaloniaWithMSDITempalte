@@ -24,11 +24,11 @@
             <Setter Property="Background" Value="Transparent"></Setter>
           </Style>
         </StackPanel.Styles>
-        <Button>
+        <Button Command="{Binding ContentRegionNavigation}" CommandParameter="IndeView">
           <avalonia:MaterialIcon Kind="Home"></avalonia:MaterialIcon>
         </Button>
       </StackPanel>
     </SplitView.Pane>
-      <Button Command="{Binding PopupNotificationCommand}">Popup Notification</Button>
+    <ContentControl prism:RegionManager.RegionName="MainContent"></ContentControl>
   </SplitView>
 </UserControl>

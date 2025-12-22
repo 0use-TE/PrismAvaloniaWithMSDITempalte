@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Prism.Container.DryIoc;
 using Prism.DryIoc;
 using Prism.Ioc;
+using Prism.Navigation.Regions;
 using PrismAvaloniaWithMSDI.ViewModels;
 using PrismAvaloniaWithMSDI.Views;
 using Serilog;
@@ -51,12 +52,20 @@ namespace PrismAvaloniaWithMSDI
             containerRegistry.GetContainer().Populate(serviceColllection);
 
             // Register you Services, Views, Dialogs, etc.
+            containerRegistry.RegisterForNavigation<IndexView>();
+
         }
         protected override void OnInitialized()
         {
             //参数化NotificationHost
             Container.Resolve<INotificationService>().SetHostWindow((MainWindow as Window) ?? throw new InvalidOperationException("主窗口设置失败!"));
             base.OnInitialized();
+
+            //Init navigation
+            //we use requestNavigate instead of RegisterViewWithRegion,because may be we should do something in the callback of OnNavigateTo,
+            //if you use RegisterViewWithRegion,this callback will not be called.
+            var regisionManager = Container.Resolve<IRegionManager>();
+            regisionManager.RequestNavigate("MainContent", nameof(IndexView));
         }
     }
 }

@@ -4,19 +4,20 @@ using System.Text;
 using Avalonia.Controls.Notifications;
 using GameDevTools.Services;
 using Prism.Commands;
+using Prism.Navigation.Regions;
 
 namespace PrismAvaloniaWithMSDI.ViewModels
 {
     internal class MainViewModel:ViewModelBase
     {
-        public DelegateCommand PopupNotificationCommand { get; set; }
-        private readonly INotificationService _notificationService;
-        public MainViewModel(INotificationService  notificationService)
+     private readonly IRegionManager _regionManager;
+        public DelegateCommand<string> ContentRegionNavigation { get; set; }
+        public MainViewModel(IRegionManager regionManager)
         {
-            _notificationService = notificationService;
-            PopupNotificationCommand = new DelegateCommand(() =>
+            _regionManager = regionManager;
+            ContentRegionNavigation = new DelegateCommand<string>((regionName)=>
             {
-                _notificationService.ShowSuccess("Welcome", "I am ouse!");
+                _regionManager.RequestNavigate("MainContent",regionName);
             });
         }
     }
