@@ -8,7 +8,7 @@ if you have  asp.net core development experience,I think you want use msdi,becau
 1. ```cd YourProjectName```
 1. Execute```dotnet run```  
 
-**Tip:you can also create template with friendly UI in VisualStudio.**
+**Tip:You can also create a template in Visual Studio for a more user-friendly UI.**
 ### Features
 1. Prism.Avalonia
 2. MSDI(Microsoft DI)
@@ -81,4 +81,4 @@ EnableCompressionInSingleFile
 </div>  
 
 ### End
-Thank you for reading.If you have any questions,just let me know.Contact£º2216528769@qq.com.
+Thank you for reading.If you have any questions,just let me know.ContactÂ£Âº2216528769@qq.com.
