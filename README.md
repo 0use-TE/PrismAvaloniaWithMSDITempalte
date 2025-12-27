@@ -3,7 +3,7 @@ Hi,I am Ouse,Welcome to visit this repository.It is an avalonia tempalte with so
 if you have  asp.net core development experience,I think you want use msdi,because a lot of nugets like EFCore,Logging privider extension methods for SerivceCollection.
 ### Usage process
 1. ```Open terminal```
-1. Type```dotnet new install PrismAvaloniaWithMSDITemplate``
+1. Type```dotnet new install PrismAvaloniaWithMSDITemplate```
 1. ```dotnet new PrismAvaloniaWithMSDI -n YourProjecName```
 1. ```cd YourProjectName```
 1. Execute```dotnet run```  
