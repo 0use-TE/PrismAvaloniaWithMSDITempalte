@@ -10,13 +10,28 @@
 
 	<PropertyGroup>
 		<PackageType>Template</PackageType>
-		<Version>1.0.1</Version>
+		<Version>1.0.2</Version>
 		<Authors>Ouse</Authors>
 		<Company>TE</Company>
+		<PackageProjectUrl>https://github.com/0use-TE/PrismAvaloniaWithMSDITempalte</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/0use-TE/PrismAvaloniaWithMSDITempalte</RepositoryUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Content Include="..\PrismAvaloniaWithMSDI\**\*"  PackagePath="content\" Exclude="**\bin\**\*;**\obj\**\*" />
+		<Content Include="..\PrismAvaloniaWithMSDI\**\*" PackagePath="content\" Exclude="**\bin\**\*;**\obj\**\*" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="..\LICENSE.txt">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Include="..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 
 </Project>
