@@ -4,11 +4,11 @@ if you have  asp.net core development experience,I think you want use msdi,becau
 ### Usage process
 1. ```Open terminal```
 1. Type```dotnet new install PrismAvaloniaWithMSDITemplate```
-1. ```dotnet new PrismAvaloniaWithMSDI -n YourProjecName```
+1. ```dotnet new PrismAvaloniaWithMSDITemplate -n YourProjecName```
 1. ```cd YourProjectName```
 1. Execute```dotnet run```  
 
-**Tip:you can also create template in VisualStudio with friendly UI.**
+**Tip:you can also create template with friendly UI in VisualStudio.**
 ### Features
 1. Prism.Avalonia
 2. MSDI(Microsoft DI)
