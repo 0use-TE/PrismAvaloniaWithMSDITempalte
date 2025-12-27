@@ -9,12 +9,17 @@ namespace PrismAvaloniaWithMSDI.ViewModels
         {
             SwitchThemeCommand = new DelegateCommand(() =>
             {
-                if (App.Current == null)
-                    return;
-                if (App.Current.RequestedThemeVariant == ThemeVariant.Dark)
+                if (App.Current == null) return;
+
+                var currentActual = App.Current.ActualThemeVariant;
+                if (currentActual == ThemeVariant.Dark)
+                {
                     App.Current.RequestedThemeVariant = ThemeVariant.Light;
+                }
                 else
+                {
                     App.Current.RequestedThemeVariant = ThemeVariant.Dark;
+                }
             });
         }
         public DelegateCommand SwitchThemeCommand { get; set; }

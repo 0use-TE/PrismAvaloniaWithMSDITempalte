@@ -28,6 +28,7 @@ if you have  asp.net core development experience,I think you want use msdi,becau
     <PackageReference Include="Prism.DryIoc.Avalonia" Version="9.0.537.11130" />
     <PackageReference Include="Semi.Avalonia" Version="11.3.7.1" />
     <PackageReference Include="Serilog" Version="4.3.0" />
+    <PackageReference Include="HotAvalonia" Version="3.0.2" />
     <PackageReference Include="Serilog.Extensions.Logging" Version="10.0.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
     <PackageReference Include="Xaml.Behaviors.Avalonia" Version="11.3.9" />
@@ -71,6 +72,8 @@ NotificationService
         void ShowSuccess(string title, string message, Action? onClick = null);
     }
 ```
+EnableCompressionInSingleFile  
+![](./docs/3.png)
 ### Showcases
 <div style="display:flex; gap:16px;">
   <img src="./docs/1.png" width="48%">
