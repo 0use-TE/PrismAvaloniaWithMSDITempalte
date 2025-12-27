@@ -24,8 +24,11 @@
             <Setter Property="Background" Value="Transparent"></Setter>
           </Style>
         </StackPanel.Styles>
-        <Button Command="{Binding ContentRegionNavigation}" CommandParameter="IndeView">
+        <Button Command="{Binding ContentRegionNavigation}" CommandParameter="IndexView">
           <avalonia:MaterialIcon Kind="Home"></avalonia:MaterialIcon>
+        </Button>
+             <Button Command="{Binding ContentRegionNavigation}" CommandParameter="OuseView">
+          <avalonia:MaterialIcon Kind="Pets"></avalonia:MaterialIcon>
         </Button>
       </StackPanel>
     </SplitView.Pane>

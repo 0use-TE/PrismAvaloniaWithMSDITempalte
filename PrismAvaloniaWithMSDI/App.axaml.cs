@@ -38,6 +38,7 @@ namespace PrismAvaloniaWithMSDI
 
             Log.Logger = new LoggerConfiguration().MinimumLevel.Debug()
                 .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day)
+                .WriteTo.Debug()
                 .CreateLogger();
 
             var serviceColllection = new ServiceCollection();
@@ -53,11 +54,12 @@ namespace PrismAvaloniaWithMSDI
 
             // Register you Services, Views, Dialogs, etc.
             containerRegistry.RegisterForNavigation<IndexView>();
+            containerRegistry.RegisterForNavigation<OuseView>();
 
         }
         protected override void OnInitialized()
         {
-            //参数化NotificationHost
+            //Setup NotificationHost
             Container.Resolve<INotificationService>().SetHostWindow((MainWindow as Window) ?? throw new InvalidOperationException("主窗口设置失败!"));
             base.OnInitialized();
 
