@@ -2,6 +2,8 @@
   <Folder Name="/Solution Items/">
     <File Path="README.md" />
   </Folder>
+  <Project Path="PrismAvaloniaWithMSDI.Desktop/PrismAvaloniaWithMSDI.Desktop.csproj" Id="d1eaad2f-d7d2-4a48-b5a2-a2aba3d9e00c" />
+  <Project Path="PrismAvaloniaWithMSDI.Wasm/PrismAvaloniaWithMSDI.Wasm.csproj" Id="53fde31e-571c-4e9c-9aa4-131cbc42ad5b" />
   <Project Path="PrismAvaloniaWithMSDI/PrismAvaloniaWithMSDI.csproj" Id="cdb6ea85-fcac-4d05-a507-af3eaa663b4e" />
   <Project Path="PrismAvaloniaWithMSDITemplate/PrismAvaloniaWithMSDITemplate.csproj" />
 </Solution>
