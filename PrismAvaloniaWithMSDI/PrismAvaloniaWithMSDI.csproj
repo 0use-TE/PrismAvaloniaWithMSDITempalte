@@ -5,6 +5,7 @@
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <Platforms>AnyCPU;ARM64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>

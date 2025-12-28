@@ -6,6 +6,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<IncludeBuildOutput>false</IncludeBuildOutput>
 		<Nullable>enable</Nullable>
+		<Platforms>AnyCPU;ARM64</Platforms>
 	</PropertyGroup>
 
 	<PropertyGroup>

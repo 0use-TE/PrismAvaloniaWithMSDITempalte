@@ -11,6 +11,7 @@
 		<!-- 将本地库包含在解压内容中 -->
 		<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
 		<ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+		<Platforms>AnyCPU;ARM64</Platforms>
 	</PropertyGroup>
 
 	<ItemGroup>

@@ -9,6 +9,19 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              x:DataType="viewmodels:MainViewModel"
              x:Class="PrismAvaloniaWithMSDI.Views.MainView">
+      <DockPanel>
+    <Border DockPanel.Dock="Top" Height="45" BorderBrush="LightGray"  Padding="8" BorderThickness="0 0 0 1">
+      <Grid ColumnDefinitions="Auto,*,Auto">
+        <StackPanel Grid.Column="0" VerticalAlignment="Center">
+          <TextBlock VerticalAlignment="Center">Title</TextBlock>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Center" Grid.Column="2">
+          <Button Command="{Binding SwitchThemeCommand}">
+            <avalonia:MaterialIcon Kind="ThemeLightDark"></avalonia:MaterialIcon>
+          </Button>
+        </StackPanel>
+      </Grid>
+    </Border>
   <SplitView DisplayMode="CompactInline">
     <SplitView.Pane>
       <StackPanel Orientation="Vertical">
@@ -34,4 +47,6 @@
     </SplitView.Pane>
     <ContentControl prism:RegionManager.RegionName="MainContent"></ContentControl>
   </SplitView>
+  </DockPanel>
+
 </UserControl>

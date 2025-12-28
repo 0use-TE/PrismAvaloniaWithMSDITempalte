@@ -10,20 +10,5 @@
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/logo.ico"
         Title="{Binding Title}">
-
-    <DockPanel>
-    <Border DockPanel.Dock="Top" Height="45" BorderBrush="LightGray"  Padding="8" BorderThickness="0 0 0 1">
-      <Grid ColumnDefinitions="Auto,*,Auto">
-        <StackPanel Grid.Column="0" VerticalAlignment="Center">
-          <TextBlock VerticalAlignment="Center">Title</TextBlock>
-        </StackPanel>
-        <StackPanel VerticalAlignment="Center" Grid.Column="2">
-          <Button Command="{Binding SwitchThemeCommand}">
-            <avalonia:MaterialIcon Kind="ThemeLightDark"></avalonia:MaterialIcon>
-          </Button>
-        </StackPanel>
-      </Grid>
-    </Border>
-    <local:MainView></local:MainView>
-  </DockPanel>
+  <local:MainView></local:MainView>
 </Window>

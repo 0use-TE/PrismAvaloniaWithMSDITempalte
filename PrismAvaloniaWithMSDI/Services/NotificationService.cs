@@ -33,7 +33,7 @@ namespace GameDevTools.Services
         public void Show(string title, string message, Action? onClick = null, NotificationType type = NotificationType.Information, int? timeoutSeconds = null)
         {
             if (_notificationManager is null)
-                throw new InvalidOperationException("请先调用 SetHostWindow() 绑定宿主窗口。");
+                throw new InvalidOperationException("请先调用 SetHostWindow() 绑定TopLevel。");
 
             _notificationManager.Show(new Notification(
                 title,
