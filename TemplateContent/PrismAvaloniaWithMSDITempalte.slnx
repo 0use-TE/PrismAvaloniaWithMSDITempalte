@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="PrismAvaloniaWithMSDI.Desktop/PrismAvaloniaWithMSDI.Desktop.csproj" />
+  <Project Path="PrismAvaloniaWithMSDI.Wasm/PrismAvaloniaWithMSDI.Wasm.csproj" />
+  <Project Path="PrismAvaloniaWithMSDI/PrismAvaloniaWithMSDI.csproj" />
+</Solution>

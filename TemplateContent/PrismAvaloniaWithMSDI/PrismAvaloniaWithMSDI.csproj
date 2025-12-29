@@ -11,7 +11,10 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
-    <Content Include=".template.config\template.json" />
+    <AvaloniaXaml Remove=".template.config\**" />
+    <Compile Remove=".template.config\**" />
+    <EmbeddedResource Remove=".template.config\**" />
+    <None Remove=".template.config\**" />
     <Folder Include="Services\DataPersistenceServices\" />
   </ItemGroup>
 

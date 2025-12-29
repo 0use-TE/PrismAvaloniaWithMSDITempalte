@@ -1,0 +1,16 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="ARM64" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/解决方案项/" />
+  <Project Path="PrismAvaloniaWithMSDITemplate/PrismAvaloniaWithMSDITemplate.csproj">
+    <Platform Solution="Release|ARM64" Project="ARM64" />
+  </Project>
+  <Project Path="TemplateContent/PrismAvaloniaWithMSDI.Desktop/PrismAvaloniaWithMSDI.Desktop.csproj" />
+  <Project Path="TemplateContent/PrismAvaloniaWithMSDI.Wasm/PrismAvaloniaWithMSDI.Wasm.csproj" />
+  <Project Path="TemplateContent/PrismAvaloniaWithMSDI/PrismAvaloniaWithMSDI.csproj" />
+</Solution>

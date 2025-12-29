@@ -6,7 +6,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<IncludeBuildOutput>false</IncludeBuildOutput>
 		<Nullable>enable</Nullable>
-		<Platforms>AnyCPU;ARM64</Platforms>
+		<Platforms>AnyCPU;</Platforms>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -19,6 +19,10 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="..\TemplateContent\**\*" Pack="true" PackagePath="content\" Exclude="..\TemplateContent\.vs\**;**\bin\**\*;**\obj\**\*" />
+	</ItemGroup>
 
 	<ItemGroup>
 	</ItemGroup>
