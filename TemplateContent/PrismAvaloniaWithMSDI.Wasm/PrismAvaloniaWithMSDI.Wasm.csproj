@@ -4,8 +4,15 @@
 		<OutputType>Exe</OutputType>
 		<Nullable>enable</Nullable>
 		<WasmBuildNative>true</WasmBuildNative>
-		<Platforms>AnyCPU;</Platforms>
-		<ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+		
+		<!--这里禁用裁剪，因为裁剪容易造成问题，您可以自己设置裁剪规则-->
+		<PublishTrimmed>false</PublishTrimmed>
+
+		<!--配置调试使用，不需要关心-->
+		<!--<ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+			<WasmBuildNative>true</WasmBuildNative>
+			<RunAOTCompilation>false</RunAOTCompilation>
+			<WasmFingerprintAssets>false</WasmFingerprintAssets>-->
 	</PropertyGroup>
 
 	<ItemGroup>
