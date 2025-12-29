@@ -77,9 +77,10 @@ EnableCompressionInSingleFile
 </div>  
 
 ### Showcases (You can also visit github pages online!)
-<div style="display:flex; gap:16px;">
-  <img src="./docs/1.png" width="48%">
-  <img src="./docs/2.png" width="48%">
+<div style="display:flex; gap:4px;">
+  <img src="./docs/1.png" width="32%">
+  <img src="./docs/linux.png" width="32%">
+  <img src="./docs/2.png" width="33%">
 </div>  
 
 ### End
