@@ -15,10 +15,9 @@ if you have  asp.net core development experience,I think you want use msdi,becau
 3. Semi.Avalonia
 4. MS Logging  
 5. Basic UI with RegionManager
+1. WebAssembly And Linux(X11) Support
 ```xml
-  <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.3.10" />
-    <PackageReference Include="Avalonia.Desktop" Version="11.3.10" />
     <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.10" />
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.3.10" />
@@ -28,11 +27,10 @@ if you have  asp.net core development experience,I think you want use msdi,becau
     <PackageReference Include="Prism.DryIoc.Avalonia" Version="9.0.537.11130" />
     <PackageReference Include="Semi.Avalonia" Version="11.3.7.1" />
     <PackageReference Include="Serilog" Version="4.3.0" />
-    <PackageReference Include="HotAvalonia" Version="3.0.2" />
     <PackageReference Include="Serilog.Extensions.Logging" Version="10.0.0" />
+    <PackageReference Include="Serilog.Sinks.Debug" Version="3.0.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
     <PackageReference Include="Xaml.Behaviors.Avalonia" Version="11.3.9" />
-  </ItemGroup>
   ```
 ### Some codesnippet below.  
 Popular serviceCollection to dryioc
@@ -73,8 +71,12 @@ NotificationService
     }
 ```
 EnableCompressionInSingleFile  
-![](./docs/3.png)
-### Showcases
+<div style="display:flex; gap:16px;">
+  <img src="./docs/4.png" width="48%">
+  <img src="./docs/3.png" width="48%">
+</div>  
+
+### Showcases (You can also visit github pages online!)
 <div style="display:flex; gap:16px;">
   <img src="./docs/1.png" width="48%">
   <img src="./docs/2.png" width="48%">
