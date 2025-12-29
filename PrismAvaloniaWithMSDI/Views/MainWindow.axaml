@@ -10,5 +10,5 @@
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/logo.ico"
         Title="{Binding Title}">
-  <local:MainView></local:MainView>
+    <local:MainView></local:MainView>
 </Window>

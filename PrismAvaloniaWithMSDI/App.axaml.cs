@@ -43,10 +43,16 @@ namespace PrismAvaloniaWithMSDI
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+#if BROWSER
             Log.Logger = new LoggerConfiguration().MinimumLevel.Debug()
-                .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day)
                 .WriteTo.Debug()
                 .CreateLogger();
+#else
+            Log.Logger = new LoggerConfiguration().MinimumLevel.Debug()
+           .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day)
+           .WriteTo.Debug()
+           .CreateLogger();
+#endif
 
             var serviceColllection = new ServiceCollection();
             serviceColllection.AddSingleton<INotificationService, NotificationService>();
@@ -68,6 +74,7 @@ namespace PrismAvaloniaWithMSDI
         {
             base.OnInitialized();
 
+#if BROWSER
             Dispatcher.UIThread.InvokeAsync(() =>
             {
                 if (ApplicationLifetime is ISingleViewApplicationLifetime single)
@@ -82,6 +89,15 @@ namespace PrismAvaloniaWithMSDI
                     regisionManager.RequestNavigate("MainContent", nameof(IndexView));
                 }
             }, DispatcherPriority.Background);
+#else
+            Container.Resolve<INotificationService>().SetHostWindow((MainWindow as Window)!);
+
+            //Init navigation
+            //we use requestNavigate instead of RegisterViewWithRegion,because may be we should do something in the callback of OnNavigateTo,
+            //if you use RegisterViewWithRegion,this callback will not be called.
+            var regisionManager = Container.Resolve<IRegionManager>();
+            regisionManager.RequestNavigate("MainContent", nameof(IndexView));
+#endif
 
         }
     }

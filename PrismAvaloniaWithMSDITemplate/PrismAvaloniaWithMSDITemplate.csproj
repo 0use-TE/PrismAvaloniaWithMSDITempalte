@@ -11,7 +11,7 @@
 
 	<PropertyGroup>
 		<PackageType>Template</PackageType>
-		<Version>1.0.2</Version>
+		<Version>1.0.4</Version>
 		<Authors>Ouse</Authors>
 		<Company>TE</Company>
 		<PackageProjectUrl>https://github.com/0use-TE/PrismAvaloniaWithMSDITempalte</PackageProjectUrl>
@@ -21,7 +21,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Content Include="..\PrismAvaloniaWithMSDI\**\*" PackagePath="content\" Exclude="**\bin\**\*;**\obj\**\*" />
 	</ItemGroup>
 
 	<ItemGroup>
