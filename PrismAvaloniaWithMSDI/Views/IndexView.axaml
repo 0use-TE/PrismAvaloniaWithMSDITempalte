@@ -8,5 +8,7 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              x:Class="PrismAvaloniaWithMSDI.Views.IndexView"
              x:DataType="viewmodels:IndexViewModel">
-  <Button Command="{Binding  PopupNotificationCommand}">Notification</Button>
+  <StackPanel VerticalAlignment="Center" Spacing="4">
+    <Button Command="{Binding  PopupNotificationCommand}">Notification</Button>
+  </StackPanel>
 </UserControl>

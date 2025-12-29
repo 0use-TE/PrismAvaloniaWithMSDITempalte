@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net10.0</TargetFramework>
+		<BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+		<Nullable>enable</Nullable>
+		<BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<!-- 启用压缩 -->
+		<EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+		<!-- 将本地库包含在解压内容中 -->
+		<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+		<ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+		<Platforms>AnyCPU;</Platforms>	
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Avalonia.Desktop" Version="11.3.10" />
+		<PackageReference Include="SkiaSharp.NativeAssets.Linux" Version="3.119.1" />
+		<PackageReference Include="HotAvalonia" Version="3.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\PrismAvaloniaWithMSDI\PrismAvaloniaWithMSDI.csproj" />
+	</ItemGroup>
+</Project>
+	

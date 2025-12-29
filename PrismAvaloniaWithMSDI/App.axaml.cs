@@ -5,6 +5,7 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
+using Avalonia.Threading;
 using DryIoc.Microsoft.DependencyInjection;
 using GameDevTools.Services;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,16 +31,28 @@ namespace PrismAvaloniaWithMSDI
 
         protected override AvaloniaObject CreateShell()
         {
-            return Container.Resolve<MainWindow>();
+            // 如果是桌面端，返回 MainWindow
+            if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime)
+            {
+                return Container.Resolve<MainWindow>();
+            }
+
+            // 如果是 WASM 或移动端，返回 MainView (UserControl)
+            return Container.Resolve<MainView>();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+#if BROWSER
             Log.Logger = new LoggerConfiguration().MinimumLevel.Debug()
-                .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day)
                 .WriteTo.Debug()
                 .CreateLogger();
+#else
+            Log.Logger = new LoggerConfiguration().MinimumLevel.Debug()
+           .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day)
+           .WriteTo.Debug()
+           .CreateLogger();
+#endif
 
             var serviceColllection = new ServiceCollection();
             serviceColllection.AddSingleton<INotificationService, NotificationService>();
@@ -59,15 +72,33 @@ namespace PrismAvaloniaWithMSDI
         }
         protected override void OnInitialized()
         {
-            //Setup NotificationHost
-            Container.Resolve<INotificationService>().SetHostWindow((MainWindow as Window) ?? throw new InvalidOperationException("主窗口设置失败!"));
             base.OnInitialized();
+
+#if BROWSER
+            Dispatcher.UIThread.InvokeAsync(() =>
+            {
+                if (ApplicationLifetime is ISingleViewApplicationLifetime single)
+                {
+                    var topLevel = TopLevel.GetTopLevel(single.MainView);
+                    Container.Resolve<INotificationService>().SetHostWindow(topLevel!);
+
+                    //Init navigation
+                    //we use requestNavigate instead of RegisterViewWithRegion,because may be we should do something in the callback of OnNavigateTo,
+                    //if you use RegisterViewWithRegion,this callback will not be called.
+                    var regisionManager = Container.Resolve<IRegionManager>();
+                    regisionManager.RequestNavigate("MainContent", nameof(IndexView));
+                }
+            }, DispatcherPriority.Background);
+#else
+            Container.Resolve<INotificationService>().SetHostWindow((MainWindow as Window)!);
 
             //Init navigation
             //we use requestNavigate instead of RegisterViewWithRegion,because may be we should do something in the callback of OnNavigateTo,
             //if you use RegisterViewWithRegion,this callback will not be called.
             var regisionManager = Container.Resolve<IRegionManager>();
             regisionManager.RequestNavigate("MainContent", nameof(IndexView));
+#endif
+
         }
     }
 }
