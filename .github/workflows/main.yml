@@ -33,7 +33,7 @@ jobs:
       # -o release: 将结果输出到名为 release 的文件夹
       # 注意：请确保下方的路径指向你实际的 .Wasm.csproj 文件
       - name: Dotnet Publish
-        run: dotnet publish PrismAvaloniaWithMSDI.Wasm/PrismAvaloniaWithMSDI.Wasm.csproj -c Release -o release
+        run: dotnet publish TemplateContent/PrismAvaloniaWithMSDI.Wasm/PrismAvaloniaWithMSDI.Wasm.csproj -c Release -o release
 
       # 5. 修正 GitHub Pages 路径 (非常重要！)
       # GitHub Pages 默认路径是 /仓库名/，而生成的 index.html 默认是 /
