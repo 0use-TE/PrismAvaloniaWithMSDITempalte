@@ -11,7 +11,7 @@
 
 	<PropertyGroup>
 		<PackageType>Template</PackageType>
-		<Version>2.0.0</Version>
+		<Version>2.0.1</Version>
 		<Authors>Ouse</Authors>
 		<Company>TE</Company>
 		<PackageProjectUrl>https://github.com/0use-TE/PrismAvaloniaWithMSDITempalte</PackageProjectUrl>
@@ -25,9 +25,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	</ItemGroup>
-
-	<ItemGroup>
 	  <None Include="..\LICENSE.txt">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
@@ -37,5 +34,4 @@
 	    <PackagePath>\</PackagePath>
 	  </None>
 	</ItemGroup>
-
 </Project>

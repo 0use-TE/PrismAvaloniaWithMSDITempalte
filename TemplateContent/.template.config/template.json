@@ -1,9 +1,8 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "Ouse",
-  "classifications": [ "Avalonia", "Prism" ],
   "name": "PrismAvaloniaWithMSDITemplate",
-  "identity": "Ouse.PrismAvaloniaWithMSDITemplate",
+  "identity": "Ouse.Unique.Prism.Template.V2",
   "shortName": "PAMSDI",
   "sourceName": "PrismAvaloniaWithMSDI",
   "tags": {
