@@ -15,7 +15,7 @@ if you have  asp.net core development experience,I think you want use msdi,becau
 3. Semi.Avalonia
 4. MS Logging  
 5. Basic UI with RegionManager
-1. WebAssembly And Linux(X11) Support
+1. WebAssembly,Linux(X11) And Android Support.
 ```xml
     <PackageReference Include="Avalonia" Version="11.3.10" />
     <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.10" />
@@ -78,9 +78,12 @@ EnableCompressionInSingleFile
 
 ### Showcases (You can also visit github pages online!)
 <div style="display:flex; gap:4px;">
-  <img src="./docs/1.png" width="32%">
-  <img src="./docs/linux.png" width="32%">
-  <img src="./docs/2.png" width="33%">
+  <img src="./docs/1.png" width="50%">
+  <img src="./docs/linux.png" width="50%">
+</div>  
+<div style="display:flex; gap:4px;">
+  <img src="./docs/2.png" width="50%">
+  <img src="./docs/android.png" width="50%">
 </div>  
 
 ### End

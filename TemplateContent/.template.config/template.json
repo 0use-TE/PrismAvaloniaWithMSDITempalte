@@ -8,5 +8,17 @@
   "tags": {
     "language": "C#",
     "type": "project"
+  },
+  "specialCustomOperations": {
+    "**/*.cs": {
+      "operations": [
+        {
+          "type": "conditional",
+          "configuration": {
+            "tokenPrefix": "//-template-"
+          }
+        }
+      ]
+    }
   }
 }

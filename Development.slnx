@@ -10,6 +10,9 @@
   <Project Path="PrismAvaloniaWithMSDITemplate/PrismAvaloniaWithMSDITemplate.csproj">
     <Platform Solution="Release|ARM64" Project="ARM64" />
   </Project>
+  <Project Path="TemplateContent/PrismAvaloniaWithMSDI.Android/PrismAvaloniaWithMSDI.Android.csproj">
+    <Deploy />
+  </Project>
   <Project Path="TemplateContent/PrismAvaloniaWithMSDI.Desktop/PrismAvaloniaWithMSDI.Desktop.csproj" />
   <Project Path="TemplateContent/PrismAvaloniaWithMSDI.Wasm/PrismAvaloniaWithMSDI.Wasm.csproj" />
   <Project Path="TemplateContent/PrismAvaloniaWithMSDI/PrismAvaloniaWithMSDI.csproj" />

@@ -74,7 +74,7 @@ namespace PrismAvaloniaWithMSDI
         {
             base.OnInitialized();
 
- #if BROWSER
+ #if BROWSER||ANDROID
             Dispatcher.UIThread.InvokeAsync(() =>
             {
                 if (ApplicationLifetime is ISingleViewApplicationLifetime single)
