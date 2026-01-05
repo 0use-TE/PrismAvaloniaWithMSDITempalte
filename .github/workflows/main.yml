@@ -24,11 +24,11 @@ jobs:
         with:
           dotnet-version: '10.0.x'
 
-      # 3. 安装 WASM 本地工具链 (解决你之前遇到的 WasmBuildNative 问题)
-      - name: Install WASM Tools
-        run: 
-            dotnet workload install wasm-tools
-            dotnet workload install android
+    # 3. 安装工具链
+      - name: Install Workloads
+        run: |
+          dotnet workload install wasm-tools
+          dotnet workload install android
 
       # 4. 发布项目
       - name: Dotnet Publish
