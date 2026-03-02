@@ -5,8 +5,8 @@
   </Configurations>
   <Folder Name="/Solution Items/">
     <File Path="README.md" />
+    <File Path="TemplateContent/PrismAvaloniaWithMSDI/.editorconfig" />
   </Folder>
-  <Folder Name="/解决方案项/" />
   <Project Path="PrismAvaloniaWithMSDITemplate/PrismAvaloniaWithMSDITemplate.csproj">
     <Platform Solution="Release|ARM64" Project="ARM64" />
   </Project>

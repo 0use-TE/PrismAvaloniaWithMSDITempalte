@@ -66,38 +66,7 @@ namespace PrismAvaloniaWithMSDI
             containerRegistry.GetContainer().Populate(serviceColllection);
 
             // Register you Services, Views, Dialogs, etc.
-            containerRegistry.RegisterForNavigation<IndexView>();
-            containerRegistry.RegisterForNavigation<OuseView>();
 
-        }
-        protected override void OnInitialized()
-        {
-            base.OnInitialized();
-
- #if BROWSER||ANDROID
-            Dispatcher.UIThread.InvokeAsync(() =>
-            {
-                if (ApplicationLifetime is ISingleViewApplicationLifetime single)
-                {
-                    var topLevel = TopLevel.GetTopLevel(single.MainView);
-                    Container.Resolve<INotificationService>().SetHostWindow(topLevel!);
-
-                    //Init navigation
-                    //we use requestNavigate instead of RegisterViewWithRegion,because may be we should do something in the callback of OnNavigateTo,
-                    //if you use RegisterViewWithRegion,this callback will not be called.
-                    var regisionManager = Container.Resolve<IRegionManager>();
-                    regisionManager.RequestNavigate("MainContent", nameof(IndexView));
-                }
-            }, DispatcherPriority.Background);
- #else
-            Container.Resolve<INotificationService>().SetHostWindow((MainWindow as Window)!);
-
-            //Init navigation
-            //we use requestNavigate instead of RegisterViewWithRegion,because may be we should do something in the callback of OnNavigateTo,
-            //if you use RegisterViewWithRegion,this callback will not be called.
-            var regisionManager = Container.Resolve<IRegionManager>();
-            regisionManager.RequestNavigate("MainContent", nameof(IndexView));
- #endif
         }
     }
 }

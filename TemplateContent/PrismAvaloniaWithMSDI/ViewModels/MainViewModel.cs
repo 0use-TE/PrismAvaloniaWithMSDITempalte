@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Avalonia.Controls;
 using Avalonia.Controls.Notifications;
 using Avalonia.Styling;
 using GameDevTools.Services;
@@ -9,21 +10,18 @@ using Prism.Navigation.Regions;
 
 namespace PrismAvaloniaWithMSDI.ViewModels
 {
-    internal class MainViewModel:ViewModelBase
+    internal class MainViewModel : ViewModelBase
     {
 
-     private readonly IRegionManager _regionManager;
-        public DelegateCommand<string> ContentRegionNavigation { get; set; }
         public DelegateCommand SwitchThemeCommand { get; set; }
+        public DelegateCommand ShowNotificationCommand { get; set; }
+        public DelegateCommand<Control> SetNotificationHostCommand { get; set; }
+        private readonly INotificationService _notificationService;
 
-        public MainViewModel(IRegionManager regionManager)
+        public MainViewModel(INotificationService notificationService)
         {
-            _regionManager = regionManager;
-            ContentRegionNavigation = new DelegateCommand<string>((regionName)=>
-            {
-                _regionManager.RequestNavigate("MainContent",regionName);
-            });
 
+            _notificationService = notificationService;
             SwitchThemeCommand = new DelegateCommand(() =>
             {
                 if (App.Current == null) return;
@@ -33,6 +31,22 @@ namespace PrismAvaloniaWithMSDI.ViewModels
                     App.Current.RequestedThemeVariant = ThemeVariant.Light;
                 else
                     App.Current.RequestedThemeVariant = ThemeVariant.Dark;
+            });
+
+            ShowNotificationCommand = new DelegateCommand(() =>
+            {
+                _notificationService.ShowSuccess("Hi", "Welcome to avalonia");
+            });
+
+            SetNotificationHostCommand = new DelegateCommand<Control>(control =>
+            {
+                var topLevel = TopLevel.GetTopLevel(control);
+                if (topLevel == null)
+                {
+                    throw new ArgumentNullException(nameof(topLevel));
+                }
+
+                _notificationService.SetHostWindow(topLevel);
             });
         }
     }

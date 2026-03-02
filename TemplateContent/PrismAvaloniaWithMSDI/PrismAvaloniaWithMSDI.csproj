@@ -33,11 +33,5 @@
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
     <PackageReference Include="Xaml.Behaviors.Avalonia" Version="11.3.9" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Views\OuseView.axaml.cs">
-      <DependentUpon>OuseView.axaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
  
 </Project>
