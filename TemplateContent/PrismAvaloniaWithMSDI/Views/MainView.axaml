@@ -12,7 +12,7 @@
              x:Name="Main">
   <StackPanel VerticalAlignment="Center" Spacing="4">
     <Button Command="{Binding SwitchThemeCommand}">Switch Theme</Button>
-    <Button Command="{Binding ShowNotificationCommand}">Show Notification</Button>
+    <Button Command="{Binding ShowNotificationCommand}">Show </Button>
   </StackPanel>
   <Interaction.Behaviors>
     <LoadedTrigger>
